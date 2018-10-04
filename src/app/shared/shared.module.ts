@@ -8,6 +8,8 @@ import {TranslateModule} from '@ngx-translate/core';
 import { LocalStorageModule } from 'angular-2-local-storage';
 import {FileUploadModule} from "ng2-file-upload";
 import { AppConfig } from './config'
+import { AgmCoreModule } from '@agm/core';
+
 export {AppConfig};
 
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
@@ -21,6 +23,8 @@ import { ResultMessageModalComponent } from './components/result-message-modal/r
 export { ResultMessageModalComponent };
 import { ImportModalComponent } from './components/import-modal/import-modal.component';
 export { ImportModalComponent };
+import { MapModalComponent } from './components/map-modal/map-modal.component';
+export { MapModalComponent };
 import { ExportModalComponent } from './components/export-modal/export-modal.component';
 export { ExportModalComponent };
 import { CreateAbsenceRequestModalComponent } from './components/create-absence-request-modal/create-absence-request-modal.component';
@@ -67,6 +71,8 @@ import {ProgramsService} from './services/programs.service';
 export {ProgramsService};
 import {NotificationService} from './services/notification.service';
 export {NotificationService};
+import {MapService} from './services/map.service';
+export {MapService};
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
  */
@@ -82,6 +88,9 @@ export {NotificationService};
             prefix: 'qldd',
             storageType: 'localStorage'
         }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAaHGDoehkovVBMyKmJL1Q-7-4wZRYpqVg'
+    }),
     FileUploadModule,
     TooltipModule.forRoot(),
     TranslateModule
@@ -94,6 +103,7 @@ export {NotificationService};
     EditScheduleModalComponent,
     ResultMessageModalComponent,
     ImportModalComponent,
+    MapModalComponent,
     CreateAbsenceRequestModalComponent,
     SendFeedbackModalComponent,
     ExportModalComponent,
@@ -108,6 +118,7 @@ export {NotificationService};
     EditScheduleModalComponent,
     ResultMessageModalComponent,
     ImportModalComponent,
+    MapModalComponent,
     CreateAbsenceRequestModalComponent,
     SendFeedbackModalComponent,
     ExportModalComponent,
@@ -133,7 +144,8 @@ export {NotificationService};
     QuizService,
     ClassesService,
     ProgramsService,
-    NotificationService
+    NotificationService,
+    MapService
   ]
 })
 export class SharedModule {}
