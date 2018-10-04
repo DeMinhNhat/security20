@@ -751,9 +751,9 @@ export class ExcelService {
         XlsxPopulate.fromBlankAsync()
             .then(workbook => {
                 workbook.sheet(0).cell("A1").value("Danh sách điểm danh " + file_name).style("horizontalAlignment", "center").style("bold",true);
-                workbook.sheet(0).range("A1:X1").merged(true);
+                workbook.sheet(0).range("A1:L1").merged(true);
                 workbook.sheet(0).cell("A2").value("GV : " + lecturers).style("horizontalAlignment", "center").style("bold",true);
-                workbook.sheet(0).range("A2:X2").merged(true);
+                workbook.sheet(0).range("A2:L2").merged(true);
 
                 workbook.sheet(0).cell("A4").value("STT").style("border", true).style("horizontalAlignment", "center").style("bold",true);
                 workbook.sheet(0).cell("B4").value("MSSV").style("border", true).style("horizontalAlignment", "center").style("bold",true);
